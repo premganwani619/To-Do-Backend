@@ -11,7 +11,7 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:21-jre-jammy
 
 # Copy the built JAR file from the builder stage into the final image and rename it
-COPY --from=builder /target/todo-app-0.0.1-SNAPSHOT todoapp.jar
+COPY --from=builder /target/todo-app-0.0.1-SNAPSHOT.jar todoapp.jar
 
 # Command to run the application
 CMD ["java", "-jar", "todoapp.jar"]
